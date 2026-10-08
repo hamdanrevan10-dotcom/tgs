@@ -1,0 +1,21 @@
+name: Compile and Run C++
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile project-2.cpp
+        run: g++ project-2.cpp -o project-2
+
+      - name: Run program
+        run: ./project-2
